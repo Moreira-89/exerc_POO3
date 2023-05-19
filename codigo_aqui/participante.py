@@ -18,7 +18,7 @@ class Participante:
         return True
 
     def __repr__(self):
-        return f"<Participante {self.nome}>"
+        return f"Participante({self.nome})"
 
     def __str__(self):
         return f"Participante {self.nome}"

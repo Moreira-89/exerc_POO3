@@ -29,7 +29,10 @@ class Festa:
                     max_pontos = pontos
                     match = p
 
-        if match is not None:
-            return match.nome
-        else:
-            return "Nenhum match encontrado"
+        return match
+
+    def __repr__(self):
+        return f"<Festa {self.nome}>"
+
+    def __str__(self):
+        return f"Festa {self.nome}: {self.descricao}"
