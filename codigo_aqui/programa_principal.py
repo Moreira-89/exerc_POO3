@@ -2,7 +2,6 @@ from festa import Festa
 from participante import Participante
 from pergunta import Pergunta
 
-# Criando festa
 festa = Festa("Festa de Aniversário", "Venha comemorar!")
 
 # Criando perguntas
@@ -16,9 +15,9 @@ festa.cadastrar_pergunta(pergunta2)
 festa.cadastrar_pergunta(pergunta3)
 
 # Criando participantes
-participante1 = Participante({})
-participante2 = Participante({})
-participante3 = Participante({})
+participante1 = Participante("Participante 1", {})
+participante2 = Participante("Participante 2", {})
+participante3 = Participante("Participante 3", {})
 
 # Adicionando participantes à festa
 festa.adicionar_participante(participante1)
@@ -32,4 +31,7 @@ participante3.responder_perguntas(festa.perguntas)
 
 # Encontrando o match de um participante específico
 match = festa.encontrar_match(participante1)
-print("O match de", participante1, "é", match)
+if match:
+    print(f"O match de {participante1.nome} é {match.nome}")
+else:
+    print(f"Não foi encontrado um match para {participante1.nome}")
