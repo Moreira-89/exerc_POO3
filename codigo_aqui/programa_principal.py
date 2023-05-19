@@ -6,9 +6,9 @@ from pergunta import Pergunta
 festa = Festa("Festa de Aniversário", "Venha comemorar!")
 
 # Criando perguntas
-pergunta1 = Pergunta("Gosta de chocolate? ")
-pergunta2 = Pergunta("Gosta de dançar? ")
-pergunta3 = Pergunta("Gosta de animais? ")
+pergunta1 = Pergunta("Gosta de chocolate?[S/N]: ")
+pergunta2 = Pergunta("Gosta de dançar?[S/N]: ")
+pergunta3 = Pergunta("Gosta de animais?[S/N]: ")
 
 # Cadastrando perguntas na festa
 festa.cadastrar_pergunta(pergunta1)

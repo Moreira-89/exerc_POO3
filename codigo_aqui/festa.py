@@ -3,23 +3,33 @@ class Festa:
         self.nome = nome
         self.descricao = descricao
         self.perguntas = []
-        self.participantes = []  # Adiciona uma lista vazia para armazenar os participantes
-
-    def adicionar_participante(self, participante):
-        self.participantes.append(participante)  # Adiciona o participante à lista
+        self.participantes = []
 
     def cadastrar_pergunta(self, pergunta):
         self.perguntas.append(pergunta)
 
+    def adicionar_participante(self, participante):
+        self.participantes.append(participante)
+
     def encontrar_match(self, participante):
-        melhor_match = None
-        max_respostas_iguais = -1
+        match = None
+        max_pontos = 0
 
         for p in self.participantes:
             if p != participante:
-                respostas_iguais = participante.calcular_match(p)
-                if respostas_iguais > max_respostas_iguais:
-                    max_respostas_iguais = respostas_iguais
-                    melhor_match = p
+                pontos = 0
+                for pergunta in self.perguntas:
+                    resposta_participante = participante.respostas[pergunta]
+                    resposta_p = p.respostas[pergunta]
 
-        return melhor_match
+                    if resposta_participante == resposta_p:
+                        pontos += 1
+
+                if pontos > max_pontos:
+                    max_pontos = pontos
+                    match = p
+
+        if match is not None:
+            return match.nome
+        else:
+            return "Nenhum match encontrado"
