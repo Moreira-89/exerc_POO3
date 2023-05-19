@@ -128,3 +128,6 @@ class Participante:
     def __str__(self):
         return f"Participante {self.nome}"
 ```
+***
+### Diagrama de Classe 
+A seguir, irei mostrar o meu Diagrama de Classe da minha resolução: 
