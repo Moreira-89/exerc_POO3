@@ -3,9 +3,10 @@ class Festa:
         self.nome = nome
         self.descricao = descricao
         self.perguntas = []
+        self.participantes = []  # Adiciona uma lista vazia para armazenar os participantes
 
     def adicionar_participante(self, participante):
-        self.participante = participante
+        self.participantes.append(participante)  # Adiciona o participante à lista
 
     def cadastrar_pergunta(self, pergunta):
         self.perguntas.append(pergunta)
